@@ -1,15 +1,21 @@
-## Just an alternative to the default ascii command.
+## Just an alternative to the default ASCII command.
 Not supposed to have more functions or to be better, just supposed to be an alternative.
 
 ### Usage:
-will take a string and convert it to ascii numerical values.
-* -d will convert to decimal
-* -h will convert to hexadecimal
-* -o will convert to octal
+Will take a string and convert it to ASCII numerical values.
+
+`ascii -h "This is Text"`
+
+> 54 68 69 73 20 69 73 20 74 65 78 74 
+
+### Flags:
+* -d convert to decimal
+* -h convert to hexadecimal
+* -o convert to octal
 
 ### Installing:
-clone this repo: `git clone https://github.com/Genghius/betterASCII`
-enter cloned repo directory.
-install with make `make install`
+Clone this repo: `git clone https://github.com/Genghius/BetterASCII`
+Enter cloned repo directory: `cd BetterASCII`
+Install with make: `make install`
 
-alternatively, compile ascii.c and move the output file to ~/.local/bin/
+Alternatively, compile ascii.c and move the output file to `~/.local/bin/` or any other bin location in your system.

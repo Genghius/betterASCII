@@ -9,11 +9,11 @@ char* usage();
 int main(int argc, char* argv[]){
 
 	if(argc == 1){
-		printf(usage());
+		printf("%s",usage());
 		printf("Use --help for more options.\n");
 	}
 	else if(strcmp(argv[1], "--help") == 0){
-		printf(usage());
+		printf("%s", usage());
 		printf("Options are:\n  -h = Hexadecimal values\n  -d = Decimal values\n  -o = Octal values\n  --help = Shows this message\n");
 	}
 	else if(strchr(argv[1], '-') != NULL){
