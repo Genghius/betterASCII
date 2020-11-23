@@ -1,5 +1,5 @@
 ## Just an alternative to the default ASCII command.
-Really, ignore the repo name, it was but mere clickbaitReally, ignore the repo name, it was but mere clickbait..
+Really, ignore the repo name, it was but mere clickbait..
 
 ### Usage:
 Will take a string and convert it to ASCII numerical values.
