@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <string.h>
 
 void decFlag(int offset, int arguments, char* strings[]);
@@ -7,29 +9,32 @@ void octaFlag(int arguments, char* strings[]);
 char* usage();
 
 int main(int argc, char* argv[]){
-
-	if(argc == 1){
+	
+	int opt;
+	int d = 1;
+	if(argc == 1 || strcmp(argv[1], "--help") == 0){
 		printf("%s",usage());
-		printf("Use --help for more options.\n");
-	}
-	else if(strcmp(argv[1], "--help") == 0){
-		printf("%s", usage());
 		printf("Options are:\n  -h = Hexadecimal values\n  -d = Decimal values\n  -o = Octal values\n  --help = Shows this message\n");
+		exit(EXIT_SUCCESS);
 	}
-	else if(strchr(argv[1], '-') != NULL){
-		if(strchr(argv[1], 'h') != NULL){
-			hexaFlag(argc, argv);
+
+	while( (opt = getopt(argc, argv, "hdo")) != -1){
+			switch(opt){
+				case 'h': hexaFlag(argc, argv); d=0; break;
+				case 'd': decFlag(2, argc, argv); d=0; break;
+				case 'o': octaFlag(argc, argv); d=0; break;
+				default:
+					  printf("%s",usage());
+					  printf("Options are:\n  -h = Hexadecimal values\n  -d = Decimal values\n  -o = Octal values\n  --help = Shows this message\n");
+					  exit(EXIT_SUCCESS);
+					  break;
+			}
 		}
-		if(strchr(argv[1], 'd') != NULL){
-			decFlag(2, argc, argv);
-		}
-		if(strchr(argv[1], 'o') != NULL){
-			octaFlag(argc, argv);
-		}
-	}
-	else {
+
+	if(d != 0){
 		decFlag(1, argc, argv);
 	}
+
 	return 0;
 }
 

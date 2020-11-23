@@ -4,4 +4,4 @@ install:
 	gcc -g -Wall -o ascii ascii.c
 	cp ascii ~/.local/bin/
 clean:
-	rm -rf ascii
+	rm -f ascii
