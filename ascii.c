@@ -19,6 +19,7 @@ int main(int argc, char* argv[]){
 			case 'o': flags[2] = 1; break;
 			default :
 				  fprintf(stderr, "%s", usage());
+				  return 1;
 		}
 	}
 
