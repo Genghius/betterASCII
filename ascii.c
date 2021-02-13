@@ -5,7 +5,7 @@
 void dec(char* string);
 void hex(char* string);
 void oct(char* string);
-char* usage();
+char* usage(void);
 
 int main(int argc, char* argv[]){
 
